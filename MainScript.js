@@ -21,8 +21,14 @@ function openNav() {
   }
   function validateForm() {
     let x = document.forms["myForm"]["fname"].value;
-    if (x == "") {
-      alert("Name must be filled out");
+    let y = document.forms["myForm"]["lname"].value;
+    let z = document.forms["myForm"]["feedback"].value;
+    if (x == "" && y=="" && z=="") {
+      alert("Areas must be filled out");
       return false;
+    }
+    else{
+        alert("Your feedback is appreciated")
+        return true;
     }
   }
