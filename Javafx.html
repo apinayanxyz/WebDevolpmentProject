@@ -38,7 +38,7 @@
           </tr>
           <tr>
             <!--Table data for netbeans-->
-            <td><img src="Apache_NetBeans_Logo.svg.png"></td>
+            <td><img src="Apache_NetBeans_Logo.svg.png" id="tableimg"></td>
             <td>Netbeans</td>
             <td>Usually has Java support built in, is easy to use</td>
             <td>
@@ -50,7 +50,7 @@
           </tr>
           <tr>
             <!--Table data for VSCode-->
-            <td><img src="Visual_Studio_Code_1.35_icon.svg.png"></td>
+            <td><img src="Visual_Studio_Code_1.35_icon.svg.png" id="tableimg"></td>
             <td>VSCode</td>
             <td>
               <p>Availaible on many platforms</p>
@@ -64,6 +64,101 @@
         </table>
         <p></p>
         <!--End of table-->
+        <!--Start of extensions-->
+        <p>When using VSCode, using the following extensions will be useful</p>
+        <div id="extensions">
+          <img src="extensions.png">
+          <p> This link will show you how to create a JavaFX file and will provide a link to download Maven.
+            <a
+              href="https://code.visualstudio.com/docs/java/java-gui">https://code.visualstudio.com/docs/java/java-gui</a>
+          </p>
+        </div>
+        <!--End of extensions-->
+        <!--Start of useful code-->
+        <h4>Useful code</h4>
+        <div id="usefulCode">
+          <!--Start of Animation Timer info-->
+          <div id="animationTimer">
+            <h5>AnimationTimer</h5>
+            <p>This code will allow you to do tasks that require no time limit, need to happen very fast, and need to
+              run in the background, such as movement in games and replacing a label that displays information(lives,
+              score, etc)</p>
+            <p>Shown below is an example of an animationTimer</p>
+            <div class="Code">
+              <p> private void GameLoop() {</p>
+              <p>new AnimationTimer() {</p>
+              <p>@Override</p>
+              <p>public void handle(long now) {</p>
+              <p>moveProjectile();</p>
+              <p>checkProjectileHit();</p>
+
+              <p>livesLabel.setText("Lives:" + player.getLives());</p>
+
+              <p>root.getChildren().remove(livesLabel);</p>
+              <p>root.getChildren().add(livesLabel);</p>
+
+              <p>if (player.getLives() == 0) {</p>
+              <p>stop();</p>
+              <p>gameTimeline.stop();</p>
+              <p>timerTimeline.stop();</p>
+              <p>AfterScreen afterScreen = new AfterScreen(SCREENWIDTH, SCREENHEIGHT, false, root, scene);</p>
+              <p>afterScreen.endGame();</p>
+              <p>}</p>
+              <p>if (timeSeconds == 30) {</p>
+              <p>stop();</p>
+              <p>gameTimeline.stop();</p>
+              <p>timerTimeline.stop();</p>
+              <p>AfterScreen afterScreen = new AfterScreen(SCREENWIDTH, SCREENHEIGHT, true, root, scene);</p>
+              <p>afterScreen.endGame();</p>
+              <p>}</p>
+
+              <p>}</p>
+
+              <p>}.start();</p>
+              }
+            </div>
+            <p>This can be called using the following.</p>
+            <div class="Code">
+              <p>GameLoop();</p>
+            </div>
+          </div>
+          <!--End of Animation Timer info-->
+          <!--Start of Keyframe info-->
+          <div id="keyframe"></div>
+          <h5>Keyframes</h5>
+          <p> This code also works on the background, but works using cycles which run for a duration.</p>
+          <p> The number of cycles can be set to any number</p>
+          <p> The duration of each cycle can also be set to pretty much any number</p>
+          <p> Shown below is an example of a Timer created using keyframes</p>
+          <div class="Code">
+            <p>private void createTimerTimeline() {</p>
+            <p> timerTimeline.setCycleCount(THIRTY);</p>
+            <p> timerTimeline.getKeyFrames().add(new KeyFrame(Duration.seconds(1),</p>
+            <p> new EventHandler() {</p>
+            <p> @Override</p>
+            <p> public void handle(Event event) {</p>
+            <p> timeSeconds++;</p>
+            <p> timeLabel.setText("Time Remaining:" + (30 - timeSeconds));</p>
+            <p> root.getChildren().remove(timeLabel);</p>
+            <p> root.getChildren().add(timeLabel);</p>
+            <p> }</p>
+            <p> }));</p>
+            <p>}</p>
+          </div>
+          <p>To call this timer, the following code is used</p>
+          <p class="Code">timerTimeline.playFromStart();</p>
+          <p>This code can be used when a specific action needs to happen at a certain time(creating objects, a timer ,etc;)</p>
+        </div>
+        <!--End of useful code-->
+        <!--Start of useful tips-->
+        <h4>Useful tips</h4>
+        <p>When trying to create a JavaFX project, try to remember the following</p>
+        <ul>
+          <li>Comment every sizeable chunk of code with block comments(/*Comment*/)</li>
+          <li>Split your code into subroutines with very clear names</li>
+          <li>keep your variable names short, memorable, easy to write or a combination of all three</li>
+          <li>Use class inheritance if you classes share many methods and varirables</li>
+        </ul>
       </div>
     </div>
   </div>
