@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Java help</title>
+  <title>Math</title>
   <link rel="stylesheet" href="MainStyleSheet.css">
   <script src="MainScript.js"></script>
 </head>
@@ -21,14 +21,13 @@
   </div>
   <!--End of side navigation bar code-->
   <div id="main">
-    <!--Button to open side navigation bar-->
-    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+    <span style="font-size:30px;cursor:pointer" onclick="changeNav()">&#9776;</span>
     <div id="maintext">
-      <h1 id="titletext">Basic help with Java</h1>
-      <h3 id="introtext">This page contains basic information, tips and tricks and some templates for pieces of code
-        that can be used in Java</h3>
+      <h1 id="titletext">Java</h1>
+      <h3 id="introtext">This page will provide some useful code that can be used when developing your code</h3>
       <div id="mainbody">
         <h4>Software that can be used to write Java</h4>
+
         <table>
           <tr>
             <!--Heading for table-->
@@ -65,48 +64,8 @@
         </table>
         <p></p>
         <!--End of table-->
-        <h4>Some helpful pieces of code</h4>
-        <h5 id="regex">Regex</h5>
-        <p>Understanding how regex function can prove to be difficult, so here are some basic examples</p>
-        <ul id="regexlist">
-          <li>
-            Regex for a full name
-            <div class="Code">([A-Z]{1}[a-z]+)( )([A-Z]{1}[a-z]+)</div>
-          </li>
-          <li>
-            Regex pattern for an email address(.com)
-            <div class="Code">([a-z]+[@])([A-Z]{1}[a-z]+[][.com])</div>
-          </li>
-          <li>
-            Regex pattern for an email address(.co.uk)
-            <div class="Code">([a-z]+[@])([A-Z]{1}[a-z]+[].co][.uk])</div>
-          </li>
-          <li>
-            Regex pattern for a word with no numbers or extra characters
-            <div class="Code">([a-z])</div>
-          </li>
-          <li>
-            Regex pattern for a capital word with no numbers or extra characters
-            <div class="Code">([A-Z]{1}[a-z]+)</div>
-          </li>
-        </ul>
-        <p>The website provided below should allow you to test out your patterns and see if they work as intended</p>
-        <a href="https://regex101.com/">https://regex101.com/</a>
-        <h5>Extra code</h5>
-        <p>Try/cath code </p>
-        <div class="Code">try {
-          <p></p>
-          <p>} catch (FileNotFoundException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-            }</p>
-        </div>
-        <p>Allows for you see if an error has occurred without the error halting your code, unless written out like
-          above</p>
       </div>
-
     </div>
-
   </div>
 
 </body>
